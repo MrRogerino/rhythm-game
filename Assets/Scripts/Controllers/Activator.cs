@@ -15,7 +15,7 @@ public class Activator : MonoBehaviour {
     AudioSource baseAudio;
     AudioSource failClip;
     AudioSource successClip;
-    GameObject dashboard;
+    //GameObject dashboard;
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +27,7 @@ public class Activator : MonoBehaviour {
         GetComponents(audioclips);
         failClip = audioclips[0];
         successClip = audioclips[1];
-        dashboard = GameObject.Find("Dashboard");
+        //dashboard = GameObject.Find("Dashboard");
     }
 	
 	// Update is called once per frame
@@ -44,7 +44,7 @@ public class Activator : MonoBehaviour {
             Destroy(note);
             PlayMusic();
             active = false;
-            dashboard.GetComponent<DashboardDisplay>().ResetDashboard();
+            //dashboard.GetComponent<DashboardDisplay>().ResetDashboard();
         }
 	}
 
@@ -53,7 +53,7 @@ public class Activator : MonoBehaviour {
         active = true;
         if (col.gameObject.CompareTag("Note"))
         {
-            dashboard.GetComponent<DashboardDisplay>().ChangeDashboard(direction); 
+            //dashboard.GetComponent<DashboardDisplay>().ChangeDashboard(direction); 
             note = col.gameObject;
         }
     }
@@ -61,7 +61,7 @@ public class Activator : MonoBehaviour {
     void OnTriggerExit(Collider col)
     {
         active = false;
-        dashboard.GetComponent<DashboardDisplay>().ResetDashboard();
+        //dashboard.GetComponent<DashboardDisplay>().ResetDashboard();
     }
 
     void PlayMusic()
